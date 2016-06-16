@@ -1,4 +1,4 @@
-# ######### FastDFS Installation manual 
+ #                       FastDFS Installation manual
 
 ![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic1.png)
 #####Tracker (10.1.130.153) Nginx Load balancing + cache

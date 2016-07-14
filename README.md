@@ -31,16 +31,23 @@
 ###<br />Storage:<br />
 <br />`mv /etc/fdfs/storage.conf.sample  /etc/fdfs/storage.conf `<br />
 <br />`Vi /etc/fdfs/storage.conf`<br />
-![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic5.png)
 
-![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic6.png)
-
-![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic9.png)
-
-![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic7.png)
-![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic8.png)
-![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic9.png)
 <br />`iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 23000 -j ACCEPT`<br />
 <br />`fdfs_storaged /etc/fdfs/storage.conf`<br />
-
+##3.Storage install nginx
+<br />`iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 22122 -j ACCEPT`<br />
+<br />`wget https://github.com/happyfish100/fastdfs-nginx-module/archive/master.zip`<br />
+<br />`wget http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz`<br />
+<br />`tar -zxvf ngx_openresty-1.7.10.1.tar.gz`<br />
+<br />`unzip master.zip`<br />
+<br />`yum -y install pcre-devel openssl openssl-devel`<br />
+<br />`cd ngx_openresty-1.7.10.1/`<br />
+<br />`./configure --with-luajit --with-http_stub_status_module --with-http_ssl_module                                            --with-http_realip_module --add-module=/root/fastdfs/nginx/fastdfs-nginx-module-master/src/ && gmake && gmake install`<br />
+<br />`cp ../fastdfs-nginx-module-master/src/mod_fastdfs.conf /etc/fdfs/`<br />
+<br />`vi /etc/fdfs/mod_fastdfs.conf`<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic9.png)<br />
+![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic10.png)or
+![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic11.png)
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic12.png)<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic13.png)<br />
 

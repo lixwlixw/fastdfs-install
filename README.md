@@ -55,4 +55,23 @@
 ![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic11.png)
 <br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic12.png)<br />
 <br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic13.png)<br />
-
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic14.png)<br />
+<br />`vi /usr/local/openresty/nginx/conf/nginx.conf`<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic15.png)<br />
+<br />`/usr/local/openresty/nginx/sbin/nginx start`<br />
+##4.Tracker install nginx:
+<br />`cd ngx_openresty-1.7.10.1`<br />
+<br />`./configure --prefix=/usr/local/nginx --add-module=/root/nginx/ngx_cache_purge-2.3 --with-pcre=/root/nginx/pcre-7.8/ --with-zlib=/root/nginx/zlib-1.2.5`<br />
+<br />`gmake && gmake install`<br />
+<br />`vi /usr/local/nginx/nginx/conf/nginx.conf`<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic16.png)<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic17.png)<br />
+<br />`/usr/local/nginx/nginx/sbin/nginx start`<br />
+##5.Test:
+<br />`vi /etc/fdfs/client.conf`<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic18.png)<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic19.png)<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic20.png)<br />
+<br />`echo 1234 > test.html`<br />
+<br />`fdfs_test /etc/fdfs/client.conf upload test.html`<br />
+<br />`And then give you a link to directly access the can`<br />

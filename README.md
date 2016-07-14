@@ -31,7 +31,12 @@
 ###<br />Storage:<br />
 <br />`mv /etc/fdfs/storage.conf.sample  /etc/fdfs/storage.conf `<br />
 <br />`Vi /etc/fdfs/storage.conf`<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic5.png)<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic6.png)<br />
+<br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic7.png)<br />
 
+![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic8.png)
+![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic9.png)
 <br />`iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 23000 -j ACCEPT`<br />
 <br />`fdfs_storaged /etc/fdfs/storage.conf`<br />
 ##3.Storage install nginx

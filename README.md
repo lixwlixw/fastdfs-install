@@ -74,4 +74,4 @@
 <br />![](https://github.com/lixwlixw/fastdfs-install/blob/master/pic20.png)<br />
 <br />`echo 1234 > test.html`<br />
 <br />`fdfs_test /etc/fdfs/client.conf upload test.html`<br />
-<br />And then give you a link to directly access the can<br />
+###And then give you a link to directly access the can。
